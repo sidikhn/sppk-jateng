@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Color Tokens */
+  --color-liquid-abyss: #012624;
+  --color-liquid-deep: #011d1c;
+  --color-liquid-kelp: #003734;
+  --color-liquid-mist: #edfffe;
+  --color-platinum: #ffffff;
+  --color-silver-mist: #bbc7c6;
+  --color-ash: #f2f2f2;
+  --color-slate-deep: #707777;
+  --color-lavender-phosphor: #fde9ff;
+  --color-bioluminescent-gradient: #00827c;
+  --gradient-bioluminescent-gradient: linear-gradient(90deg, rgb(0, 130, 124) 0%, rgb(203, 255, 252) 100%);
+  --color-aurora-gradient: #cbfffc;
+  --gradient-aurora-gradient: linear-gradient(90deg, rgb(203, 255, 252) 0%, rgb(237, 255, 254) 26.25%, rgb(255, 253, 250) 47.57%, rgb(250, 209, 255) 88.96%);
+
+  --radius-cards: 16px;
+  --radius-buttons: 6px;
+  --radius-small: 6px;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-liquid-abyss);
+    color: var(--color-platinum);
+    font-family: 'Matter', 'Plus Jakarta Sans', Inter, ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-platinum);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+  }
+}
+
+/* Custom Scrollbar for theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #011d1c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #003734;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00827c;
+}
+
+/* Utility classes */
+.btn-aurora {
+  background: linear-gradient(90deg, rgb(203, 255, 252) 0%, rgb(237, 255, 254) 26.25%, rgb(255, 253, 250) 47.57%, rgb(250, 209, 255) 88.96%);
+  color: #112a28;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-aurora:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(203, 255, 252, 0.25);
+}
+
+.card-kelp {
+  background-color: #003734;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.card-deep {
+  background-color: #011d1c;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #bbc7c6;
+}
+
+/* Enforce dark background & white text on all form elements and dropdowns */
+input, select, textarea {
+  background-color: #012220 !important;
+  color: #ffffff !important;
+  color-scheme: dark;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #8fa1a0 !important;
+}
+
+select option {
+  background-color: #012220 !important;
+  color: #ffffff !important;
+}
+
+select option:checked,
+select option:hover {
+  background-color: #004d49 !important;
+  color: #cbfffc !important;
+}
+
+/* Recharts Tooltip Text Fix */
+.recharts-default-tooltip {
+  background-color: #002523 !important;
+  border: 1px solid rgba(20, 184, 166, 0.4) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6) !important;
+}
+
+.recharts-tooltip-item-name,
+.recharts-tooltip-item-value,
+.recharts-tooltip-item {
+  color: #ffffff !important;
+}
+
+.recharts-tooltip-label {
+  color: #2dd4bf !important;
+  font-weight: 600 !important;
+}
+
